@@ -1,4 +1,4 @@
-package com.ativ2.spring_boot;
+package com.ativ2.sistema_estudantes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

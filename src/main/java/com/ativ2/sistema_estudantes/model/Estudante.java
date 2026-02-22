@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Estudante {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -31,4 +31,11 @@ public class Estudante {
 
     @Column(nullable = false, unique = true, length = 20)
     private String matricula;
+
+    public Estudante(String nome, String email, String curso, String matricula) {
+        this.nome = nome;
+        this.email = email;
+        this.curso = curso;
+        this.matricula = matricula;
+    }
 }

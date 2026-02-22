@@ -14,7 +14,6 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class EstudanteCrontroller {
-    // private final EstudanteService estudanteService;
 
     @GetMapping("/sistema/info")
     public InformationResponse getInformations() {

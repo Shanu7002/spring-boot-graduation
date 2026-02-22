@@ -20,19 +20,19 @@ public class Estudante {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column(nullable = false, name = "curso_id")
+    private Long curso;
+
     @Column(nullable = false, length = 100)
     private String nome;
 
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 80)
-    private String curso;
-
     @Column(nullable = false, unique = true, length = 20)
     private String matricula;
 
-    public Estudante(String nome, String email, String curso, String matricula) {
+    public Estudante(String nome, String email, Long curso, String matricula) {
         this.nome = nome;
         this.email = email;
         this.curso = curso;

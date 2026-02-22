@@ -26,4 +26,12 @@ public class CursoService {
 
         return response;
     }
+
+    public String getCursoById(Long id) {
+        int size = cursoRepository.findAll().size();
+        if (id > size || id < 0) {
+            return "Invalid course try 1 - " + size;
+        }
+        return cursoRepository.findNameById(id);
+    }
 }

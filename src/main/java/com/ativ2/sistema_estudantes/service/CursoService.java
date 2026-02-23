@@ -21,7 +21,7 @@ public class CursoService {
         String[] response = new String[size]; 
 
         for (int i = 0; i < size; i++) {
-            response[i] = cursos.get(i).getName();
+            response[i] = cursos.get(i).getNome();
         }
 
         return response;
@@ -30,8 +30,8 @@ public class CursoService {
     public String getCursoById(Long id) {
         int size = cursoRepository.findAll().size();
         if (id > size || id < 0) {
-            return "Invalid course try 1 - " + size;
+            return "Invalid course. Try 1 - " + size;
         }
-        return cursoRepository.findNameById(id);
+        return cursoRepository.findNomeById(id);
     }
 }

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,8 +22,9 @@ public class Estudante {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(nullable = false, name = "curso_id")
-    private Long curso;
+    @ManyToOne
+    @JoinColumn(name = "curso_id", nullable = false)
+    private Curso curso;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -32,7 +35,7 @@ public class Estudante {
     @Column(nullable = false, unique = true, length = 20)
     private String matricula;
 
-    public Estudante(String nome, String email, Long curso, String matricula) {
+    public Estudante(String nome, String email, Curso curso, String matricula) {
         this.nome = nome;
         this.email = email;
         this.curso = curso;

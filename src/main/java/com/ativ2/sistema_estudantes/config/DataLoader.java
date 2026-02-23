@@ -28,11 +28,11 @@ public class DataLoader implements CommandLineRunner{
         }
 
         if (estudanteRepository.count() == 0) {
-            Long engSoft = cursoRepository.findIdByName("Engenharia de Software");
-            Long engComp = cursoRepository.findIdByName("Engenharia de Computação");
-            Long ads = cursoRepository.findIdByName("Análise e Desenvolvimento de Sistemas");
-            Long cc = cursoRepository.findIdByName("Ciência da Computação");
-            Long si = cursoRepository.findIdByName("Sistemas de Informação");
+            Curso engSoft = cursoRepository.findByNome("Engenharia de Software");
+            Curso engComp = cursoRepository.findByNome("Engenharia de Computação");
+            Curso ads = cursoRepository.findByNome("Análise e Desenvolvimento de Sistemas");
+            Curso cc = cursoRepository.findByNome("Ciência da Computação");
+            Curso si = cursoRepository.findByNome("Sistemas de Informação");
 
             estudanteRepository.save(new Estudante("Ana Paula Ribeiro", "ana.ribeiro@email.com", engComp, "100"));
             estudanteRepository.save(new Estudante("Lucas Martins Silva", "lucas.silva@email.com", ads, "101"));

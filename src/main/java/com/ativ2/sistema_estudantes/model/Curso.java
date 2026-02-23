@@ -21,9 +21,9 @@ public class Curso {
     private Long id;
 
     @Column(nullable = false, length = 100)
-    private String name;
+    private String nome;
 
-    public Curso(String name) {
-        this.name = name;
+    public Curso(String nome) {
+        this.nome = nome;
     }
 }

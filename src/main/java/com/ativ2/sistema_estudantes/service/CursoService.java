@@ -34,4 +34,20 @@ public class CursoService {
         }
         return cursoRepository.findNomeById(id);
     }
+
+    public boolean addCurso(String nome) {
+        try {
+            if (nome == null || nome.trim().isEmpty()) {
+                return false;
+            }
+
+            Curso curso = new Curso();
+            curso.setNome(nome);
+            cursoRepository.save(curso);
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
